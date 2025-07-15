@@ -1,36 +1,44 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/login']">Navbar</a>
+    <a class="navbar-brand d-flex align-items-center" [routerLink]="['/']">
+      Ganadería Argentina
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" [routerLink]="['/register']">Home</a>
+          <a class="nav-link" [routerLink]="['/']">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" [routerLink]="['/search']">Buscar Hacienda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/publish']">Publicar Hacienda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contact']">Contacto</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Mi Cuenta
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/profile']">Mi Perfil</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/my-listings']">Mis Publicaciones</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/login']">Cerrar Sesión</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex mx-auto search-form" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar hacienda..." aria-label="Buscar"/>
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
+      <a class="btn btn-success ms-3 d-none d-lg-block" [routerLink]="['/publish']">
+        Publicar Hacienda
+      </a>
     </div>
   </div>
 </nav>
