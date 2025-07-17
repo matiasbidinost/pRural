@@ -42,11 +42,16 @@ form {
 }
 
 .user-form input {
+    outline: none;
     width: 100%;
     padding: 0.6rem;
     border-radius: 10px;
     border: none;
     font-size: 1rem;
+}
+.user-form input:focus{
+    background-color: #c9e6c2;
+    box-shadow: 0 0 20px rgba(64, 255, 0, 0.7);
 }
 
 .btn-login {
