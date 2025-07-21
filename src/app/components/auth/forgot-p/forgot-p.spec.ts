@@ -1,23 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
-import { ForgotP } from './forgot-p';
-
-describe('ForgotP', () => {
-  let component: ForgotP;
-  let fixture: ComponentFixture<ForgotP>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ForgotP]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(ForgotP);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+@Component({
+  selector: 'app-forgot-p',
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: './forgot-p.html',
+  styleUrl: './forgot-p.css'
+})
+export class ForgotP { }

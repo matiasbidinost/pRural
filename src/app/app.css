@@ -1,82 +1,132 @@
-/* Navbar general */
-.navbar {
-    background: linear-gradient(90deg, #2e5c22 0%, #4e944f 100%) !important;
+/* Navbar personalizado */
+.mi-navbar {
+    background: linear-gradient(90deg, #2e5c22 0%, #4e944f 100%);
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     padding: 0.5rem 1.5rem;
+    width: 100%;
 }
-
-/* Marca y links */
-.navbar-brand, .nav-link, .dropdown-toggle {
-    color: #fffbe7 !important;
-    font-weight: 600;
+.mi-navbar-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.mi-navbar-marca {
+    color: #fffbe7;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
     letter-spacing: 0.5px;
+    margin-right: 2rem;
+}
+.mi-navbar-links {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.mi-navbar-lista {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+.mi-navbar-link {
+    color: #fffbe7;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 1rem;
     transition: color 0.2s;
+    letter-spacing: 0.5px;
 }
-
-.navbar-brand:hover, .nav-link:hover, .dropdown-toggle:hover {
-    color: #b7e4c7 !important;
-    text-shadow: 0 1px 6px rgba(46,92,34,0.10);
+.mi-navbar-link:hover {
+    color: #b7e4c7;
 }
-
-.nav-link.active {
-    color: #ffe082 !important;
-    border-bottom: 2px solid #ffe082;
-    border-radius: 0;
+.mi-navbar-dropdown {
+    position: relative;
 }
-
-.nav-link.disabled {
-    color: #bdbdbd !important;
-    opacity: 0.7;
+.mi-navbar-dropdown-toggle {
+    cursor: pointer;
 }
-
-/* Dropdown */
-.dropdown-menu {
+.mi-navbar-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
     background: #2e5c22;
     border-radius: 12px;
-    border: none;
     box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    min-width: 180px;
+    z-index: 10;
+    padding: 0.5rem 0;
 }
-
-.dropdown-item {
+.mi-navbar-dropdown:hover .mi-navbar-dropdown-menu {
+    display: block;
+}
+.mi-navbar-dropdown-item {
     color: #fffbe7;
-    transition: background 0.2s, color 0.2s;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
     border-radius: 8px;
     margin: 2px 0;
+    transition: background 0.2s, color 0.2s;
 }
-
-.dropdown-item:hover, .dropdown-item:focus {
+.mi-navbar-dropdown-item:hover {
     background: #4e944f;
     color: #ffe082;
 }
-
-/* Search form */
-.form-control[type="search"] {
+.mi-navbar-dropdown-divider {
+    border: none;
+    border-top: 1px solid #b7e4c7;
+    margin: 0.3rem 0;
+}
+.mi-navbar-search-form {
+    display: flex;
+    align-items: center;
+    margin: 0 1.5rem;
+}
+.mi-navbar-search-input {
     border-radius: 20px;
     border: none;
     padding: 0.5rem 1rem;
     margin-right: 0.5rem;
     box-shadow: 0 1px 4px rgba(46,92,34,0.08);
-    transition: box-shadow 0.2s;
+    font-size: 1rem;
 }
-
-.form-control[type="search"]:focus {
-    box-shadow: 0 2px 8px rgba(46,92,34,0.18);
-    outline: none;
-}
-
-.btn-outline-success {
-    border-radius: 20px;
-    border: 2px solid #b7e4c7;
+.mi-navbar-search-btn {
     color: #2e5c22;
     background: #fffbe7;
     font-weight: 600;
-    transition: background 0.2s, color 0.2s, border 0.2s;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
 }
-
-.btn-outline-success:hover, .btn-outline-success:focus {
+.mi-navbar-search-btn:hover {
     background: #4e944f;
     color: #fffbe7;
-    border-color: #4e944f;
+}
+.mi-boton-publicar {
+    background: #4e944f;
+    color: #fffbe7;
+    font-weight: 700;
+    border: none;
+    border-radius: 0;
+    padding: 0.7rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    margin-left: 1.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+.mi-boton-publicar:hover {
+    background: #2e5c22;
+    color: #ffe082;
 }
 
 /* Responsive: navbar rounded only on desktop */

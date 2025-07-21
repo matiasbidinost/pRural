@@ -1,48 +1,60 @@
-    <div class="title">
-        <div class="logo">
-            <h1>Ganadería Argentina</h1>
-            <p>Mercado de ganado bovino</p>
-        </div>
-        <!-- Formulario de login con autocompletado de datos -->
-        <form autocomplete="on">
-            <div class="user-form">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
-            </div>
-
-            <div class="user-form">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
-            </div>
-
-            <button type="submit" class="btn-login">Iniciar Sesión</button>
-        </form>
-        
-        <!-- login extras y redes sociales -->
-        <div class="divider">
-            <span>¿No tienes cuenta?</span>
-        </div>
-
-        <div class="loginExtras">
-            <a href="../register/register.html">Crear cuenta nueva</a> | 
-            <a href="../forgot-p/forgot-p.html">¿Olvidaste tu contraseña?</a>
-        </div>
-
-        <div class="social-login">
-            
-            <div class="social-buttons">
-                <button type="button" class="btn-social google" aria-label="Ingresar con Google">
-                    <span class="icon"></span>
-                    Google
-                </button>
-                <button type="button" class="btn-social facebook" aria-label="Ingresar con Facebook">
-                    <span class="icon"></span>
-                    Facebook
-                </button>
-                <button type="button" class="btn-social twitter" aria-label="Ingresar con Twitter">
-                    <span class="icon"></span>
-                    Twitter
-                </button>
-            </div>
-        </div>
+<div class="title">
+  <div class="logo">
+    <h1>Ganadería Argentina</h1>
+    <p>Mercado de ganado bovino</p>
+  </div>
+  <!--formulario de login la funcion onSubmit es para que cuando se envie el formulario se ejecute la funcion de loginForm(line 25 login.ts) -->
+  <form autocomplete="on" [formGroup]="loginForm" (ngSubmit)="onSubmit()"> 
+    <div class="user-form">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" formControlName="email" placeholder="tu@email.com" autocomplete="email">
+      <!--si el formulario no es valido se muestra el mensaje de error-->
+      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+        <small *ngIf="loginForm.get('email')?.errors?.['required']">El correo es obligatorio.</small>
+        <small *ngIf="loginForm.get('email')?.errors?.['email']">Formato de correo inválido.</small>
+      </div>
     </div>
+
+    <div class="user-form">
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" formControlName="password" placeholder="••••••••" autocomplete="current-password">
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        <small *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</small>
+        <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Debe tener al menos 6 caracteres.</small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-login">Iniciar Sesión</button>
+  </form>
+
+  <div class="divider">
+    <span>¿No tienes cuenta?</span>
+  </div>
+
+  <div class="loginExtras">
+    <a [routerLink]="['/register']">Crear cuenta nueva</a> |
+    <a [routerLink]="['/forgotPassword']">¿Olvidaste tu contraseña?</a>
+  </div>
+
+  <div class="social-login">
+    <div class="social-buttons">
+      <button type="button" class="btn-social google" aria-label="Ingresar con Google">
+        <span class="icon"></span>
+        Google
+      </button>
+      <button type="button" class="btn-social facebook" aria-label="Ingresar con Facebook">
+        <span class="icon"></span>
+        Facebook
+      </button>
+      <!--
+        IMPORTANTE: No borrar el atributo aria-label.
+        aria-label proporciona una descripción accesible para lectores de pantalla y tecnologías asistivas,
+        permitiendo que personas con discapacidad visual entiendan la función del botón aunque solo tenga un ícono o texto breve.
+      -->
+      <button type="button" class="btn-social twitter" aria-label="Ingresar con Twitter">
+        <span class="icon"></span>
+        Twitter
+      </button>
+    </div>
+  </div>
+</div>
