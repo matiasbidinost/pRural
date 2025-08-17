@@ -1,0 +1,102 @@
+<div class="contact-container">
+  <div class="contact-header">
+    <h1>Contacto</h1>
+    <p>¿Tienes alguna pregunta o necesitas ayuda? Estamos aquí para ayudarte.</p>
+  </div>
+  
+  <div class="contact-content">
+    <div class="contact-info">
+      <h2>Información de Contacto</h2>
+      
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div class="contact-details">
+          <h3>Email</h3>
+          <p>info@ganaderiaargentina.com</p>
+          <p>soporte@ganaderiaargentina.com</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-details">
+          <h3>Teléfono</h3>
+          <p>+54 11 1234-5678</p>
+          <p>Lunes a Viernes: 9:00 - 18:00</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-details">
+          <h3>Oficina</h3>
+          <p>Av. Corrientes 1234</p>
+          <p>Ciudad Autónoma de Buenos Aires</p>
+          <p>Argentina</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div class="contact-details">
+          <h3>Redes Sociales</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-form-container">
+      <h2>Envíanos un Mensaje</h2>
+      
+      <form class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="apellido">Apellido *</label>
+            <input type="text" id="apellido" name="apellido" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="asunto">Asunto *</label>
+          <select id="asunto" name="asunto" required>
+            <option value="">Selecciona un asunto</option>
+            <option value="consulta">Consulta General</option>
+            <option value="soporte">Soporte Técnico</option>
+            <option value="publicacion">Problema con Publicación</option>
+            <option value="pago">Problema de Pago</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Describe tu consulta o problema..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-button">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</div>

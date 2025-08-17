@@ -8,11 +8,27 @@ import { provideHttpClient } from '@angular/common/http';
 export const routes: Routes = [
     {
         path: '',
-        loadComponent: () => import('./components/auth/login/login').then(m => m.Login)
+        loadComponent: () => import('./components/auth/home/home').then(m => m.Home)
+    },
+    {
+        path: 'home',
+        loadComponent: () => import('./components/auth/home/home').then(m => m.Home)
     },
     {
         path: 'login',
         loadComponent: () => import('./components/auth/login/login').then(m => m.Login)
+    },
+    {
+        path: 'search',
+        loadComponent: () => import('./components/auth/search/search').then(m => m.Search)
+    },
+    {
+        path: 'publish',
+        loadComponent: () => import('./components/auth/publish/publish').then(m => m.Publish)
+    },
+    {
+        path: 'contact',
+        loadComponent: () => import('./components/auth/contact/contact').then(m => m.Contact)
     },
     {
         path: 'register',

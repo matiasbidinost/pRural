@@ -5,11 +5,12 @@
     </a>
     <div class="mi-navbar-links">
       <ul class="mi-navbar-lista">
-        <li><a class="mi-navbar-link" [routerLink]="['/']">Inicio</a></li>
+        <li><a class="mi-navbar-link" [routerLink]="['/home']">Inicio</a></li>
         <li><a class="mi-navbar-link" [routerLink]="['/search']">Buscar Hacienda</a></li>
         <li><a class="mi-navbar-link" [routerLink]="['/publish']">Publicar Hacienda</a></li>
         <li><a class="mi-navbar-link" [routerLink]="['/contact']">Contacto</a></li>
-        <li class="mi-navbar-dropdown">
+        <li><a class="mi-navbar-link" [routerLink]="['/login']">Inicio sesion</a></li>
+        <!--<li class="mi-navbar-dropdown">
           <a class="mi-navbar-link mi-navbar-dropdown-toggle" href="#">Mi Cuenta</a>
           <ul class="mi-navbar-dropdown-menu">
             <li><a class="mi-navbar-dropdown-item" [routerLink]="['/profile']">Mi Perfil</a></li>
@@ -17,7 +18,7 @@
             <li><hr class="mi-navbar-dropdown-divider"></li>
             <li><a class="mi-navbar-dropdown-item" [routerLink]="['/login']">Cerrar Sesión</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
       <form class="mi-navbar-search-form" role="search">
         <input class="mi-navbar-search-input" type="search" placeholder="Buscar hacienda..." aria-label="Buscar"/>
