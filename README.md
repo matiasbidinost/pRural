@@ -1,59 +1,50 @@
 # PRural
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+PRural es una aplicación web para la **compra y venta de hacienda ganadera**.
+El proyecto conecta a vendedores y compradores de vacas, toros y terneros, permitiendo publicar animales de manera individual o en lotes completos.
 
-## Development server
+## Propósito
 
-To start a local development server, run:
+Este proyecto no intenta reemplazar al consignatario tradicional de hacienda.
+Su objetivo es **facilitar la venta minorista de vacunos** a pequeños productores o particulares que enfrentan dificultades como:
 
-```bash
-ng serve
-```
+* Falta de ingresos para mantener al ganado.
+* Escasez de pasturas.
+* Reducción necesaria del tamaño del rodeo.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La idea es ofrecer una herramienta **ágil, accesible y transparente** para la comercialización de animales.
 
-## Code scaffolding
+## Características principales
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+* Registro de usuarios y gestión de publicaciones.
+* Publicación de animales individuales o por lotes.
+* Catálogo filtrable por tipo de animal (vacas, toros, terneros).
+* Orientado a productores pequeños y medianos.
 
-```bash
-ng generate component component-name
-```
+## Estado del proyecto
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+El desarrollo se encuentra en progreso.
+Las funcionalidades se irán incorporando en futuras versiones con el objetivo de ofrecer una experiencia simple y eficiente.
 
-```bash
-ng generate --help
-```
+## Roadmap
 
-## Building
+### Listo
+- [x] Proyecto base en Angular creado  
+- [x] Ruteo básico entre páginas  
+- [x] Estilos iniciales aplicados  
+- [x] Simulación de login y "forgot password"  
 
-To build the project run:
+### En progreso
+- [ ] Registro de usuarios  
+- [ ] Publicación de animales individuales  
+- [ ] Catálogo simple para ver publicaciones  
 
-```bash
-ng build
-```
+### Próximos pasos
+- [ ] Publicación de lotes de animales  
+- [ ] Filtros básicos en el catálogo (tipo de animal, ubicación, precio)  
+- [ ] Chat simple entre comprador y vendedor  
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### A futuro
+- [ ] Integración de pagos (ejemplo: Mercado Pago en modo prueba)  
+- [ ] Panel de usuario con sus publicaciones y ventas  
+- [ ] Mejoras en diseño y experiencia de usuario 
