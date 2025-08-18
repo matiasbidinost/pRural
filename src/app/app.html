@@ -1,13 +1,11 @@
 <nav class="mi-navbar">
-  <div class="mi-navbar-contenedor">
     <a class="mi-navbar-marca" [routerLink]="['/']">
       Ganadería Argentina
     </a>
-    <div class="mi-navbar-links">
       <ul class="mi-navbar-lista">
         <li><a class="mi-navbar-link" [routerLink]="['/home']">Inicio</a></li>
         <li><a class="mi-navbar-link" [routerLink]="['/search']">Buscar Hacienda</a></li>
-        <li><a class="mi-navbar-link" [routerLink]="['/publish']">Publicar Hacienda</a></li>
+        <!--<li><a class="mi-navbar-link" [routerLink]="['/publish']">Publicar Hacienda</a></li>-->
         <li><a class="mi-navbar-link" [routerLink]="['/contact']">Contacto</a></li>
         <li><a class="mi-navbar-link" [routerLink]="['/login']">Inicio sesion</a></li>
         <!--<li class="mi-navbar-dropdown">
@@ -24,10 +22,8 @@
         <input class="mi-navbar-search-input" type="search" placeholder="Buscar hacienda..." aria-label="Buscar"/>
         <button class="mi-navbar-search-btn" type="submit">Buscar</button>
       </form>
-      <a class="mi-boton-publicar" [routerLink]="['/publish']">
+      <!--<a class="mi-boton-publicar" [routerLink]="['/publish']">
         Publicar Hacienda
-      </a>
-    </div>
-  </div>
+      </a>-->
 </nav>
 <router-outlet></router-outlet>

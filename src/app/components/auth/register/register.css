@@ -1,0 +1,78 @@
+/* Tipografía y color global (igual que el otro) */
+form, h1, p, a, div {
+    color: antiquewhite;
+    text-align: center;
+    font-family: 'Helvetica';
+  }
+  
+  /* El H1 arriba, coherente con la estética */
+  h1 {
+    margin: 2rem 0 0.5rem;
+  }
+  
+  /* No tocamos el HTML: oculto los <br> para maquetar con gap/margins */
+  form br { display: none; }
+  
+  /* El form se comporta como la tarjeta .title del otro ejemplo */
+  form {
+    background-color: rgba(36, 73, 24, 0.7);
+    border-radius: 20px;
+    width: 50%;
+    max-width: 500px;
+    padding: 3vh 4vw;
+    margin: 1.5rem auto;             /* centrado horizontal */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;            /* inputs a 100% */
+    gap: 1.2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Labels como en .user-form label */
+  form label {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  
+  /* Inputs como en .user-form input */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    outline: none;
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  /* Focus igual al otro (verde clarito + glow) */
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form input[type="password"]:focus {
+    background-color: #c9e6c2;
+    box-shadow: 0 0 20px rgba(64, 255, 0, 0.7);
+  }
+  
+  /* Botón submit con la pinta de .btn-login */
+  form input[type="submit"] {
+    margin-top: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #2e5c22;
+    border: none;
+    border-radius: 12px;
+    color: antiquewhite;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #3b752d;
+  }
+  
+  /* Responsive similar (tarjeta más ancha en pantallas chicas) */
+  @media (max-width: 640px) {
+    form { width: 90%; }
+  }
+  

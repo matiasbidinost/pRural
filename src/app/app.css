@@ -1,97 +1,80 @@
 /* Navbar personalizado */
 .mi-navbar {
+    overflow-x: hidden;
     background: linear-gradient(90deg, #2e5c22 0%, #4e944f 100%);
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    padding: 0.5rem 1.5rem;
-    width: 100%;
-}
-.mi-navbar-contenedor {
+    padding: 0 1.5rem;      /* sacamos padding vertical */
+    width: auto;
+
+    /* altura fija para todo el nav */
+    height: 60px;
+
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: stretch;   /* hijos ocupan toda la altura */
+    justify-content: space-between; 
+    gap: 1rem;
 }
-.mi-navbar-marca {
+
+/* Marca */
+.mi-navbar-marca { 
+    display: flex;
+    align-items: center;   /* centra verticalmente dentro del alto fijo */
     color: #fffbe7;
     font-weight: 700;
     font-size: 1.5rem;
     text-decoration: none;
     letter-spacing: 0.5px;
-    margin-right: 2rem;
 }
-.mi-navbar-links {
-    display: flex;
-    align-items: center;
-    flex: 1;
-}
+
+/* Lista */
 .mi-navbar-lista {
     display: flex;
-    align-items: center;
+    align-items: stretch;  /* cada li toma alto 100% */
+    justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    flex: 1;
+    gap: 1rem;
 }
+.mi-navbar-lista li {
+    display: flex;
+    align-items: stretch;  /* el link ocupa todo */
+}
+
+/* Links */
 .mi-navbar-link {
+    display: flex;
+    align-items: center;
+    height: 100%;           /* ocupa todo el alto del li */
+    padding: 0 1rem;
     color: #fffbe7;
     font-weight: 600;
     text-decoration: none;
-    margin: 0 1rem;
-    transition: color 0.2s;
+    transition: color 0.2s, background-color 0.2s;
     letter-spacing: 0.5px;
 }
 .mi-navbar-link:hover {
+    background-color: #2e5c22; /* ahora cubre todo el alto */
     color: #b7e4c7;
 }
-.mi-navbar-dropdown {
-    position: relative;
-}
-.mi-navbar-dropdown-toggle {
-    cursor: pointer;
-}
-.mi-navbar-dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #2e5c22;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    min-width: 180px;
-    z-index: 10;
-    padding: 0.5rem 0;
-}
-.mi-navbar-dropdown:hover .mi-navbar-dropdown-menu {
-    display: block;
-}
-.mi-navbar-dropdown-item {
-    color: #fffbe7;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    display: block;
-    border-radius: 8px;
-    margin: 2px 0;
-    transition: background 0.2s, color 0.2s;
-}
-.mi-navbar-dropdown-item:hover {
-    background: #4e944f;
-    color: #ffe082;
-}
-.mi-navbar-dropdown-divider {
-    border: none;
-    border-top: 1px solid #b7e4c7;
-    margin: 0.3rem 0;
-}
+
+/* Barra de búsqueda */
 .mi-navbar-search-form {
     display: flex;
     align-items: center;
-    margin: 0 1.5rem;
+    gap: 0.5rem; /* separa input y botón */
+    flex: 1; /* ocupa espacio y ayuda a centrar todo */
+    max-width: 350px;   /* evita que sea gigante */
+    min-width: 200px;   /* no se achica demasiado */
+
+    /* que no se estire al alto del nav si no querés */
+    align-self: center;
 }
 .mi-navbar-search-input {
+    flex: 1; /* input ocupa todo el espacio disponible */
     border-radius: 20px;
     border: none;
     padding: 0.5rem 1rem;
-    margin-right: 0.5rem;
     box-shadow: 0 1px 4px rgba(46,92,34,0.08);
     font-size: 1rem;
 }
@@ -109,30 +92,50 @@
     background: #4e944f;
     color: #fffbe7;
 }
+
+/* Botón de publicar */
 .mi-boton-publicar {
     background: #4e944f;
     color: #fffbe7;
     font-weight: 700;
     border: none;
-    border-radius: 0;
-    padding: 0.7rem 2rem;
+    border-radius: 4px; /* leve redondeado más moderno */
+    padding: 0.7rem 1.5rem;
     text-align: center;
     text-decoration: none;
-    display: block;
-    width: 100%;
-    max-width: 220px;
-    margin-left: 1.5rem;
+    display: inline-flex;   /* para centrar verticalmente */
+    align-items: center;    /* centra el texto en el alto del nav */
     transition: background 0.2s, color 0.2s;
+    margin-left: 0;     /* sacamos el empuje extra */
+    flex-shrink: 0;     /* evita que se deforme, pero no estira el navbar */
+    align-self: center; /* no lo estires al 100% si no querés */
 }
 .mi-boton-publicar:hover {
     background: #2e5c22;
     color: #ffe082;
 }
 
-/* Responsive: navbar rounded only on desktop */
+/* Responsive */
 @media (max-width: 991px) {
-    .navbar {
-        border-radius: 0;
-        padding: 0.5rem 0.5rem;
+    .mi-navbar {
+        flex-direction: column; /* navbar se apila en móviles */
+        align-items: stretch;
+        padding: 0.5rem;
+    }
+    .mi-navbar-lista {
+        flex-direction: column; /* links en columna */
+        gap: 0.5rem;
+        align-self: stretch;    /* sigue ocupando el ancho y alto del bloque */
+    }
+    .mi-navbar-search-form {
+        width: 100%;
+        max-width: none;
+        align-self: stretch;
+    }
+    .mi-boton-publicar {
+        width: 100%;
+        margin: 0.5rem 0;
+        align-self: stretch;
+        justify-content: center;
     }
 }
