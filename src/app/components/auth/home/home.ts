@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 // ESTO ES DIFERENTE A NgModules:
 // - En NgModules: CommonModule se importaba en AppModule y todos los componentes lo heredaban
 // - En standalone: cada componente debe importar lo que necesita
-import { CommonModule } from '@angular/common';
+
 
 // @Component: Decorador que define la configuración del componente
 @Component({
@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
   // - En NgModules: las funcionalidades venían del módulo padre (AppModule)
   // - En standalone: cada componente importa lo que necesita
   // CommonModule: Para usar *ngIf, *ngFor, *ngSwitch, etc.
-  imports: [CommonModule],
+  imports: [],
   
   // templateUrl: Archivo HTML que define la estructura del componente
   templateUrl: './home.html',
