@@ -1,9 +1,18 @@
 <div class="search-container">
-  <h1>Buscar Hacienda</h1>
+
+
   <div class="search-form">
+    <div class="search-header">
+      <div class="search-header-icon">🔍</div>
+      <h1>Buscar Hacienda</h1>
+      <p class="search-subtitle">Encuentra el ganado perfecto para tu campo con filtros avanzados</p>
+    </div>
     <div class="search-filters">
       <div class="filter-group">
-        <label for="tipo">Tipo de Hacienda</label>
+        <label for="tipo">
+          <span class="filter-icon">🐄</span>
+          Tipo de Hacienda
+        </label>
         <select id="tipo" name="tipo">
           <option value="">Todos los tipos</option>
           <option value="vaca">Vaca</option>
@@ -14,7 +23,10 @@
       </div>
       
       <div class="filter-group">
-        <label for="raza">Raza</label>
+        <label for="raza">
+          <span class="filter-icon">🏷️</span>
+          Raza
+        </label>
         <select id="raza" name="raza">
           <option value="">Todas las razas</option>
           <option value="angus">Angus</option>
@@ -25,29 +37,68 @@
       </div>
       
       <div class="filter-group">
-        <label for="precio-min">Precio Mínimo</label>
-        <input type="number" id="precio-min" name="precio-min" placeholder="0">
+        <label for="precio-min">
+          <span class="filter-icon">💰</span>
+          Precio Mínimo
+        </label>
+        <input type="number" id="precio-min" name="precio-min" placeholder="$0">
       </div>
       
       <div class="filter-group">
-        <label for="precio-max">Precio Máximo</label>
-        <input type="number" id="precio-max" name="precio-max" placeholder="1000000">
+        <label for="precio-max">
+          <span class="filter-icon">💵</span>
+          Precio Máximo
+        </label>
+        <input type="number" id="precio-max" name="precio-max" placeholder="$1.000.000">
       </div>
       
       <div class="filter-group">
-        <label for="ubicacion">Ubicación</label>
+        <label for="ubicacion">
+          <span class="filter-icon">📍</span>
+          Ubicación
+        </label>
         <input type="text" id="ubicacion" name="ubicacion" placeholder="Provincia, Ciudad">
       </div>
     </div>
     
-    <button type="submit" class="search-button">Buscar Hacienda</button>
+    <button type="submit" class="search-button">
+      <span class="search-button-icon">🔎</span>
+      Buscar Hacienda
+    </button>
   </div>
   
   <div class="search-results">
-    <h2>Resultados de Búsqueda</h2>
+    <h2>
+      Resultados de Búsqueda
+    </h2>
     <div class="results-grid">
-      <!-- Aquí se mostrarán los resultados -->
-      <p>Ingresa los filtros y haz clic en buscar para ver resultados</p>
+      <div class="results-placeholder">
+        <div class="results-placeholder-icon">🐮</div>
+        <p>Configura los filtros y haz clic en buscar<br>para encontrar la hacienda ideal</p>
+      </div>
+    </div>
+
+    <div class="quick-stats">
+      <div class="stat-card">
+        <div class="stat-card-icon">🐄</div>
+        <div class="stat-card-number">10,000+</div>
+        <div class="stat-card-label">Cabezas Disponibles</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon">🏷️</div>
+        <div class="stat-card-number">15+</div>
+        <div class="stat-card-label">Razas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon">📍</div>
+        <div class="stat-card-number">25</div>
+        <div class="stat-card-label">Provincias</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon">⭐</div>
+        <div class="stat-card-number">99%</div>
+        <div class="stat-card-label">Satisfacción</div>
+      </div>
     </div>
   </div>
 </div>
