@@ -97,19 +97,106 @@
     transform: translateY(-2px);
 }
 
-/* Inicio Imagen */
+/* Inicio Imagen & Slider */
 .inicio-imagen {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.inicio-imagen img {
-    padding: none;
-    margin: none;
+.slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(201, 230, 194, 0.2);
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    animation: slideAuto 10s infinite ease-in-out;
+}
+
+.slide {
+    width: 20%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Animación automática del slider - 5 imágenes */
+@keyframes slideAuto {
+    0%, 15% { transform: translateX(0); }
+    20%, 35% { transform: translateX(-20%); }
+    40%, 55% { transform: translateX(-40%); }
+    60%, 75% { transform: translateX(-60%); }
+    80%, 95% { transform: translateX(-80%); }
+    100% { transform: translateX(0); }
+}
+
+/* Dots indicadores */
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(3, 67, 8, 0.5);
+    border: 2px solid rgba(7, 112, 2, 0.8);
+    transition: all 0.3s ease;
+    animation: dotPulse 10s infinite ease-in-out;
+}
+
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: -8s; }
+.dot:nth-child(3) { animation-delay: -6s; }
+.dot:nth-child(4) { animation-delay: -4s; }
+.dot:nth-child(5) { animation-delay: -2s; }
+
+@keyframes dotPulse {
+    0%, 15% { background: #c9e6c2; transform: scale(1.2); box-shadow: 0 0 10px rgba(201, 230, 194, 0.8); }
+    20%, 100% { background: rgba(255, 255, 255, 0.5); transform: scale(1); box-shadow: none; }
+}
+
+/* Efecto hover para pausar */
+.slider:hover .slides {
+    animation-play-state: paused;
+}
+
+.slider:hover .dot {
+    animation-play-state: paused;
+}
+
+/* Overlay sutil para mejor contraste */
+.slider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+    border-radius: 0 0 16px 16px;
 }
 
 /* Features Section */
@@ -267,10 +354,22 @@
 
     .inicio-imagen {
         order: -1;
+        width: 100%;
     }
 
-    .inicio-imagen img {
-        max-width: 350px;
+    .slider {
+        height: 280px;
+        max-width: 100%;
+    }
+
+    .slider-dots {
+        bottom: 10px;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
     }
 
     .features-section h2,
