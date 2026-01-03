@@ -4,6 +4,75 @@ form, h1, p, a, div {
     text-align: center;
     font-family: 'Helvetica';
   }
+
+/* Botón volver al inicio */
+.volver-home {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: antiquewhite;
+    text-decoration: none;
+    font-family: 'Helvetica';
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    background: rgba(36, 73, 24, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(201, 230, 194, 0.2);
+    z-index: 100;
+}
+
+.volver-home:hover {
+    background: rgba(46, 92, 34, 0.9);
+    box-shadow: 0 0 20px rgba(64, 255, 0, 0.4);
+    transform: translateX(-5px);
+    border-color: rgba(201, 230, 194, 0.4);
+}
+
+.volver-home span {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.volver-home:hover span {
+    transform: translateX(-3px);
+}
+
+/* Botón volver a login */
+.volver-login {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: antiquewhite;
+    text-decoration: none;
+    font-family: 'Helvetica';
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    background: rgba(36, 73, 24, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(201, 230, 194, 0.2);
+    z-index: 100;
+}
+
+.volver-login:hover {
+    background: rgba(46, 92, 34, 0.9);
+    box-shadow: 0 0 20px rgba(64, 255, 0, 0.4);
+    border-color: rgba(201, 230, 194, 0.4);
+}
+
+.volver-login strong {
+    color: #c9e6c2;
+}
   
   /* El H1 arriba, coherente con la estética */
   h1 {

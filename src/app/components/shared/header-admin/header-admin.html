@@ -1,0 +1,17 @@
+<nav class="admin-navbar">
+  <a class="admin-navbar-marca" [routerLink]="['/admin']">
+    🛡️ Panel Admin
+  </a>
+  <ul class="admin-navbar-lista">
+    <li><a class="admin-navbar-link" [routerLink]="['/admin']">Dashboard</a></li>
+    <li><a class="admin-navbar-link" [routerLink]="['/admin/users']">Usuarios</a></li>
+    <li><a class="admin-navbar-link" [routerLink]="['/admin/listings']">Publicaciones</a></li>
+    <li><a class="admin-navbar-link" [routerLink]="['/admin/reports']">Reportes</a></li>
+    <li><a class="admin-navbar-link" [routerLink]="['/admin/settings']">Configuración</a></li>
+  </ul>
+  <div class="admin-user-info">
+    <span class="admin-badge">Admin</span>
+    <a class="admin-logout" [routerLink]="['/login']">Cerrar Sesión</a>
+  </div>
+</nav>
+

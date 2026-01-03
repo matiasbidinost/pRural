@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-header-user',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './register.html',
-  styleUrl: './register.css'
+  templateUrl: './header-user.html',
+  styleUrl: './header-user.css'
 })
-export class Register {
+export class HeaderUserComponent {}
 
-}
