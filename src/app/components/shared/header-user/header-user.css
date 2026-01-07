@@ -122,19 +122,90 @@
   transform: translateY(-1px);
 }
 
+/* Menú hamburguesa - oculto por defecto */
+.menu-toggle-checkbox {
+  display: none;
+}
+
+.menu-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 8px;
+  background: rgba(46, 92, 34, 0.6);
+  transition: all 0.3s ease;
+}
+
+.menu-toggle-label:hover {
+  background: rgba(46, 92, 34, 0.9);
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: antiquewhite;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Contenedor del menú */
+.mi-navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: space-between;
+}
+
 /* Responsive */
 @media (max-width: 991px) {
   .mi-navbar {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 1.5rem;
     height: auto;
-    gap: 1rem;
+    gap: 0;
   }
 
   .mi-navbar-marca {
-    text-align: center;
-    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  /* Mostrar hamburguesa */
+  .menu-toggle-label {
+    display: flex;
+  }
+
+  /* Contenido del menú - oculto por defecto */
+  .mi-navbar-content {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+
+  /* Mostrar menú cuando checkbox está activo */
+  .menu-toggle-checkbox:checked ~ .mi-navbar-content {
+    display: flex;
+  }
+
+  /* Animación del hamburguesa cuando está activo */
+  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
   }
 
   .mi-navbar-lista {
@@ -150,12 +221,53 @@
   .mi-navbar-link {
     justify-content: center;
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    background: rgba(46, 92, 34, 0.4);
+  }
+
+  .mi-navbar-link:hover {
+    background: rgba(46, 92, 34, 0.8);
   }
 
   .mi-navbar-search-form {
     width: 100%;
     max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mi-navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .mi-navbar-marca {
+    font-size: 1rem;
+  }
+
+  .menu-toggle-label {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hamburger-line {
+    width: 18px;
+    margin: 2px 0;
+  }
+
+  .mi-navbar-link {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .mi-navbar-search-input {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .mi-navbar-search-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }
 
