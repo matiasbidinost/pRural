@@ -1,3 +1,27 @@
+/* Header Usuario */
+.header-user {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-hero h1 {
+  font-size: 2.5rem;
+  color: antiquewhite;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Helvetica';
+}
+
+.header-hero p {
+  font-size: 1.1rem;
+  color: #c9e6c2;
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Helvetica';
+}
+
 /* Navbar Usuario - Glassmorphism */
 .mi-navbar {
   background: rgba(36, 73, 24, 0.85);
@@ -10,9 +34,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
   border-bottom: 1px solid rgba(201, 230, 194, 0.2);
 }
 
@@ -122,12 +143,8 @@
   transform: translateY(-1px);
 }
 
-/* Menú hamburguesa - oculto por defecto */
-.menu-toggle-checkbox {
-  display: none;
-}
-
-.menu-toggle-label {
+/* Menú hamburguesa - oculto por defecto en desktop */
+.menu-toggle-btn {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -137,10 +154,11 @@
   cursor: pointer;
   border-radius: 8px;
   background: rgba(46, 92, 34, 0.6);
+  border: none;
   transition: all 0.3s ease;
 }
 
-.menu-toggle-label:hover {
+.menu-toggle-btn:hover {
   background: rgba(46, 92, 34, 0.9);
 }
 
@@ -154,6 +172,19 @@
   transition: all 0.3s ease;
 }
 
+/* Animación hamburguesa cuando está abierto */
+.menu-toggle-btn.abierto .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle-btn.abierto .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle-btn.abierto .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* Contenedor del menú */
 .mi-navbar-content {
   display: flex;
@@ -162,112 +193,41 @@
   flex: 1;
   justify-content: space-between;
 }
-
-/* Responsive */
 @media (max-width: 991px) {
-  .mi-navbar {
-    flex-wrap: wrap;
-    padding: 1rem 1.5rem;
-    height: auto;
-    gap: 0;
-  }
-
-  .mi-navbar-marca {
-    font-size: 1.2rem;
-  }
-
-  /* Mostrar hamburguesa */
-  .menu-toggle-label {
-    display: flex;
-  }
-
-  /* Contenido del menú - oculto por defecto */
+  /* El contenedor se convierte en hamburguesa */
   .mi-navbar-content {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  /* Ocultar contenido por defecto */
+  .mi-navbar-content .mi-navbar-lista,
+  .mi-navbar-content .mi-navbar-search-form {
     display: none;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 1rem;
-    gap: 1rem;
   }
-
-  /* Mostrar menú cuando checkbox está activo */
-  .menu-toggle-checkbox:checked ~ .mi-navbar-content {
+  
+  /* Mostrar icono hamburguesa */
+  .mi-navbar-content::before {
+    content: '☰';
+    font-size: 1.5rem;
+    color: antiquewhite;
+  }
+  
+  /* Cuando está abierto, mostrar menú */
+  .mi-navbar-content.abierto::before {
+    content: '✕';
+  }
+  
+  .mi-navbar-content.abierto .mi-navbar-lista,
+  .mi-navbar-content.abierto .mi-navbar-search-form {
     display: flex;
-  }
-
-  /* Animación del hamburguesa cuando está activo */
-  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle-checkbox:checked ~ .menu-toggle-label .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-  }
-
-  .mi-navbar-lista {
     flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .mi-navbar-lista li {
-    width: 100%;
-  }
-
-  .mi-navbar-link {
-    justify-content: center;
-    width: 100%;
-    padding: 0.9rem 1rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(36, 73, 24, 0.95);
+    padding: 1rem;
     border-radius: 10px;
-    background: rgba(46, 92, 34, 0.4);
-  }
-
-  .mi-navbar-link:hover {
-    background: rgba(46, 92, 34, 0.8);
-  }
-
-  .mi-navbar-search-form {
-    width: 100%;
-    max-width: none;
+    min-width: 200px;
   }
 }
-
-@media (max-width: 480px) {
-  .mi-navbar {
-    padding: 0.8rem 1rem;
-  }
-
-  .mi-navbar-marca {
-    font-size: 1rem;
-  }
-
-  .menu-toggle-label {
-    width: 36px;
-    height: 36px;
-  }
-
-  .hamburger-line {
-    width: 18px;
-    margin: 2px 0;
-  }
-
-  .mi-navbar-link {
-    padding: 0.8rem 1rem;
-    font-size: 0.9rem;
-  }
-
-  .mi-navbar-search-input {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  .mi-navbar-search-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-

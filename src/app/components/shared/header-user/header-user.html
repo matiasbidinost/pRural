@@ -1,27 +1,20 @@
-<nav class="mi-navbar">
-  <a class="mi-navbar-marca" [routerLink]="['/home']">
-    🐮 Ganadería Argentina
-  </a>
-  
-  <!-- Menú hamburguesa para móvil -->
-  <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
-  <label for="menu-toggle" class="menu-toggle-label">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-  </label>
-
-  <div class="mi-navbar-content">
-    <ul class="mi-navbar-lista">
-      <li><a class="mi-navbar-link" [routerLink]="['/home']">Inicio</a></li>
-      <li><a class="mi-navbar-link" [routerLink]="['/search']">Buscar Hacienda</a></li>
-      <li><a class="mi-navbar-link" [routerLink]="['/contact']">Contacto</a></li>
-      <li><a class="mi-navbar-link" [routerLink]="['/login']">Iniciar Sesión</a></li>
-    </ul>
-    <form class="mi-navbar-search-form" role="search">
-      <input class="mi-navbar-search-input" type="search" placeholder="Buscar hacienda..." aria-label="Buscar"/>
-      <button class="mi-navbar-search-btn" type="submit">Buscar</button>
-    </form>
-  </div>
-</nav>
-
+<header class="header-user">
+  <nav class="mi-navbar">
+    <a class="mi-navbar-marca" [routerLink]="['/home']">
+      🐮 Ganadería Argentina
+    </a>
+    
+    <div class="mi-navbar-content" [class.abierto]="menuAbierto" (click)="toggleMenu()">
+      <ul class="mi-navbar-lista">
+        <li><a class="mi-navbar-link" [routerLink]="['/home']">Inicio</a></li>
+        <li><a class="mi-navbar-link" [routerLink]="['/search']">Buscar Hacienda</a></li>
+        <li><a class="mi-navbar-link" [routerLink]="['/contact']">Contacto</a></li>
+        <li><a class="mi-navbar-link" [routerLink]="['/login']">Iniciar Sesión</a></li>
+      </ul>
+      <form class="mi-navbar-search-form" role="search">
+        <input class="mi-navbar-search-input" type="search" placeholder="Buscar hacienda..." aria-label="Buscar"/>
+        <button class="mi-navbar-search-btn" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+</header>
